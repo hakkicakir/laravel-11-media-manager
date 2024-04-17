@@ -1,0 +1,56 @@
+{
+  "name": "hcakir/laravel-11-media-manager",
+  "description": "Laravel 11 için medya yönetim paketi",
+  "type": "library",
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Hakkı Çakır",
+      "email": "dsmndhm@gmail.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^10.0|^11.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Hcakir\\Laravel11MediaManager\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Hcakir\\Laravel11MediaManager\\Tests\\Unit\\": "src/tests/unit/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^9.0|^10.0|^11.0"
+  },
+  "suggest": {
+    "laravel/framework": "Bu paket, Laravel framework ile daha iyi çalışır."
+  },
+  "provide": {
+    "psr/log-implementation": "1.0.0"
+  },
+  "conflict": {
+    "laravel/framework": "<5.5"
+  },
+  "replace": {
+    "hcakir/laravel-10-media-manager": "1.0.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Hcakir\\Laravel11MediaManager\\Providers\\MediaManagerServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+      "@php artisan package:discover --ansi"
+    ]
+  }
+}
